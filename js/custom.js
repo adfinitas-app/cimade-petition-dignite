@@ -41,7 +41,7 @@ function sendForm() {
         },
         success : function(result) {
             $('.form-destroy').remove();
-            $('.form-title').after($('<div />').addClass('helvetica font-18 text-center').html('<b>MERCI D’AVOIR SIGNÉ NOTRE PÉTITION !<br class="hide-for-medium" />MERCI DE PARTAGER.<b><br />Un grand merci pour votre soutien aux réfugiés.<br /><b>Plus nous serons nombreux, plus nous aurons de force.</b>'));
+            $('.form-title').after($('<div />').addClass('helvetica font-18 text-center').html('<b>MERCI D’AVOIR SIGNÉ NOTRE PÉTITION !<br class="hide-for-medium" /> MERCI DE PARTAGER.<b><br />Un grand merci pour votre soutien aux réfugiés.<br /><b>Plus nous serons nombreux, plus nous aurons de force.</b>'));
             $('.center').height('448px').css('padding', '80px 0').css('backgroundImage', 'url("../img/bg-center2.jpg")');
             $('.center .vertical-center').removeClass('vertical-center');
             $('html, body').animate({scrollTop: $('.center').offset().top});
