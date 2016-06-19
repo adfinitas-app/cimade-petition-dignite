@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" dir="ltr">
+    <head>
+        <!-- Start of Woopra Code -->
+        <script>
+            function extractUrlParams(){
+                var t = document.location.search.substring(1).split('&'); var f = [];
+                for (var i=0; i<t.length; i++){
+                    var x = t[ i ].split('=');
+                    f[x[0]]=decodeURIComponent(x[1]);
+                }
+                return f;
+            };
+
+            (function(){
+                var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call","trackForm","trackClick"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
+            })("woopra");
+
+            woopra.config({
+                domain: 'lacimade.org'
+            });
+
+            var p = extractUrlParams();
+
+            if ('email' in p) {
+                if ('lastname' in p && 'firstname' in p) {
+                    woopra.identify({
+                        email: p['email'],
+                        name: p['firstname'] + ' ' + p['lastname']
+                    });
+                } else {woopra.identify({email: p['email']})}
+            }
+
+            woopra.track();
+        </script>
+        <!-- End of Woopra Code -->
+
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>La Cimade - Journée Modiale des Réfugiés</title>
+        <link rel="stylesheet" href="css/foundation.min.css">
+        <link rel="stylesheet" href="css/intlTelInput.css">
+        <link rel="stylesheet" href="css/custom.css">
+
+        <meta property="og:title" content="La Cimade - Journée Modiale des Réfugiés"/>
+        <meta property="og:type" content="Website"/>
+        <meta property="og:site_name" content="La Cimade - Journée Modiale des Réfugiés"/>
+        <meta property="og:description" content="Avec la Cimade, défendez la dignité des migrants, des demandeurs d’asile et des réfugiés ! Signez la pétition !"/>
+        <meta property="og:image" content="img/logo_share.jpg"/>
+        <meta property="og:locale" content="fr_FR"/>
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="403" />
+        <meta property="og:image:height" content="403" />
+    </head>
+    <body>
+        <div class="row collapse">
+            <div class="large-12 columns top pos-relative text-center">
+                <div class="vertical-center full-width">
+                    <img src="img/logo.png" class="logo" />
+                    <img src="img/logo-journee.png" class="logo-journee" />
+                    <div class="site-title pos-relative cooper-semibold font-38 text-white text-uppercase">
+                        la dignité pour les réfugiés !
+                    </div>
+                    <a href="javascript:void(0);" onclick="$('html, body').animate({scrollTop: $('.center').offset().top});" class="button text-uppercase btn-red cooper-semibold font-27">Signez la pétition</a>
+                    <div class="row collapse">
+                        <div class="small-12 small-offset-0 medium-10 medium-offset-1 large-8 large-offset-2 columns site-description text-center helvetica font-18 text-white">
+                            <p>En danger de mort dans leur pays, ils n'ont pas d'autres choix que l'exil et espèrent une protection.</p>
+
+                            <p>Ne laissons pas les mouvements xénophobes européens et leurs idéologies populistes s'emparer de la question de l'immigration.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="large-12 columns center pos-relative text-center">
+                <div class="vertical-center full-width">
+                    <div class="helvetica font-18 text-center">
+                        La qualité de notre accueil est le marqueur de notre démocratie. Nous croyons en l’hospitalité.<br class="show-for-medium" />
+                        Nous croyons en la richesse de tout être humain.
+                    </div>
+                    <div class="form-title cooper-semibold text-red font-27 text-uppercase">
+                        Avec La Cimade, défendez la dignité des migrants,<br class="show-for-medium" /> des demandeurs d’asile et des réfugiés !
+                    </div>
+                    <div class="helvetica font-18 text-center form-destroy">
+                        <b>Signez notre pétition</b>. Notre objectif est d’obtenir des réponses des pouvoirs publics<br class="show-for-medium" />qui soient à la hauteur de nos valeurs et principes, tant sur le plan des lois que sur le plan des moyens.<br class="show-for-medium" />
+                        <b>Plus nous serons nombreux, plus nous aurons de force. </b>
+                    </div>
+
+                    <div class="row collapse form-destroy">
+                        <div class="columns small-10 small-offset-1 medium-6 medium-offset-3 large-4 large-offset-4">
+                            <form class="form pos-relative">
+                                <div class="arrow">
+                                    <img src="img/form-fleche.png" />
+                                </div>
+                                <div class="row text-left">
+                                    <div class="large-12 columns">
+                                        <label>Prénom* :</label>
+                                        <input type="text" id="firstname" placeholder="Votre prénom" />
+                                    </div>
+                                    <div class="large-12 columns">
+                                        <label>Nom* :</label>
+                                        <input type="text" id="lastname" placeholder="Votre nom" />
+                                    </div>
+                                    <div class="large-12 columns">
+                                        <label>Adresse e-mail* :</label>
+                                        <input type="text" id="email" placeholder="Votre adresse e-mail" />
+                                    </div>
+                                    <div class="large-12 columns">
+                                        <label>Téléphone :</label>
+                                        <input type="text" id="phone" placeholder="Votre téléphone" />
+                                        <div class="text-right helvetica font-12">
+                                            Numéro en France uniquement
+                                        </div>
+                                    </div>
+                                    <div class="large-12 columns">
+                                        <input type="button" value="Signez" class="text-uppercase text-white text-uppercase btn-form cooper-semibold font-27" onclick="sendForm();" />
+                                    </div>
+                                    <div class="large-12 columns font-12 helvetica text-center text-red alerts">
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="large-12 columns repeat text-center">
+                <div class="row collapse">
+                    <div class="cooper-semibold font-27 title text-uppercase">
+                        Aidez-nous à diffuser cette pétition en la partageant :
+                    </div>
+                    <div class="large-12 columns text-center">
+                        <a href="javascript:void(0);" onclick="window.open('http://www.facebook.com/share.php?u=' + encodeURIComponent('http://ladignitepourlesrefugies.lacimade.org'), 'Facebook', 'width=650,height=400');"><img src="img/logo-fb.png" onmouseover="this.src = 'img/logo-fb-on.png';" onmouseout="this.src = 'img/logo-fb.png';" /></a> <a href="javascript:void(0);" onclick="javascript:void(0);" onclick="window.open('http://twitter.com/share?text=' + encodeURIComponent('Avec la Cimade, défendez la dignité des migrants, des demandeurs d’asile et des réfugiés ! Signez la pétition !') + '&url=' + encodeURIComponent('http://ladignitepourlesrefugies.lacimade.org'), 'Twitter', 'width=650,height=400');"><img src="img/logo-tw.png" onmouseover="this.src = 'img/logo-tw-on.png';" onmouseout="this.src = 'img/logo-tw.png';" class="logo-social-big" /></a>
+                    </div>
+                    <div class="large-12 columns text-center">
+                        <a href="javascript:void(0);" class="btn-brown text-uppercase cooper-semibold font-27 text-white">#ladignitépourlesréfugiés</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="row collapse">
+            <div class="medium-4 columns logo-footer">
+                <a href="http://www.lacimade.org" target="_blank"><img src="img/logo-footer.gif" /></a>
+            </div>
+            <div class="medium-8 columns copyright text-right helvetica font-14 text-white">
+                Copyright 2016 <a href="http://www.lacimade.org" target="_blank">www.lacimade.org</a> - <a href="http://www.lacimade.org/meta/contacts" target="_blank">Contact</a> - Crédit photo : ©Philippe Huguen /AFP - Réalisé par <a href="http://www.adfinitas.fr" target="_blank">Adfinitas</a>
+            </div>
+            <div class="medium-8 medium-offset-4 columns social-icons text-right helvetica font-14 font-bold text-white">
+                Nous rejoindre <a href="https://www.facebook.com/La-Cimade-176663393102/?fref=ts" target="_blank"><img src="img/footer-fb.gif" onmouseover="this.src = 'img/footer-fb-on.gif';" onmouseout="this.src = 'img/footer-fb.gif';" class="social" /></a> <a href="https://twitter.com/lacimade" target="_blank"><img src="img/footer-tw.gif" onmouseover="this.src = 'img/footer-tw-on.gif';" onmouseout="this.src = 'img/footer-tw.gif';" class="social" /></a>
+            </div>
+        </footer>
+
+        <script src="js/vendor/jquery.js"></script>
+        <script src="js/vendor/what-input.js"></script>
+        <script src="js/vendor/foundation.js"></script>
+        <script src="js/intlTelInput.js"></script>
+        <script src="js/custom.js"></script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                                    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-26879531-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</html>

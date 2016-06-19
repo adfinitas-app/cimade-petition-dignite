@@ -1,0 +1,373 @@
+@font-face {
+    font-family: "CooperHewitt-Semibold";
+    src: url("../fonts/CooperHewitt-Semibold.eot");
+    src: url("../fonts/CooperHewitt-Semibold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/CooperHewitt-Semibold.woff") format("woff"),
+    url("../fonts/CooperHewitt-Semibold.ttf") format("truetype"),
+    url("../fonts/CooperHewitt-Semibold.svg#CooperHewitt-Semibold") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+    font-family: "Helvetica";
+    src: url("../fonts/helvetica-webfont.eot");
+    src: url("../fonts/helvetica-webfont.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/helvetica-webfont.woff") format("woff"),
+    url("../fonts/helvetica-webfont.ttf") format("truetype"),
+    url("../fonts/helvetica-webfont.svg#helveticaregular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+    font-family: "Helvetica";
+    src: url("../fonts/helvetica-bold-webfont.eot");
+    src: url("../fonts/helvetica-bold-webfont.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/helvetica-bold-webfont.woff") format("woff"),
+    url("../fonts/helvetica-bold-webfont.ttf") format("truetype"),
+    url("../fonts/helvetica-bold-webfont.svg#helveticabold") format("svg");
+    font-weight: bold;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.font-12 {
+    font-size: 0.750rem;
+}
+
+.font-14 {
+    font-size: 0.875em;
+}
+
+.font-18 {
+    font-size: 1.125rem;
+}
+
+.font-27 {
+    font-size: 1.688rem;
+}
+
+.font-38 {
+    font-size: 2.375rem;
+}
+
+.cooper-semibold {
+    font-family: 'CooperHewitt-Semibold';
+}
+
+.helvetica {
+    font-family: 'Helvetica';
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.text-red {
+    color: #ee2e24;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.pos-relative {
+    position: relative;
+}
+
+.horizontal-center {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+}
+
+.vertical-center {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+.hv-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+
+/**********************************************************************************************************/
+
+.top {
+    background: url('../img/bg-top.jpg') no-repeat bottom center / cover;
+    height: 504px;
+}
+
+.logo-journee {
+    position: absolute;
+    right: 16%;
+    top: 0;
+}
+
+.site-title {
+    margin-top: 26px;
+}
+
+.btn-red, .btn-red:visited, .btn-red:focus {
+    background: #ee2e24;
+    padding: 20px 33px;
+    margin: 45px auto;
+    line-height: 1rem;
+}
+
+.mac .btn-red, .mac .btn-red:visited, .mac .btn-red:focus {
+    padding: 20px 33px 10px;
+}
+
+.btn-red:hover {
+    color: #504036;
+    background: #ffffff;
+}
+
+.center {
+    background: url('../img/bg-center.jpg') no-repeat top center / cover;
+    height: 761px;
+    padding: 20px 0;
+}
+
+.form-title {
+    margin: 35px auto;
+}
+
+.form {
+    background: #ffffff;
+    border-top: solid 4px #ee2e24;
+    padding: 15px 30px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.form .arrow {
+    position: absolute;
+    right: -100px;
+    top: -30px;
+}
+
+.form label {
+    font-family: 'helvetica';
+    font-size: 1.125rem;
+}
+
+.form .intl-tel-input {
+    display: block;
+    position: relative;
+}
+
+.form .intl-tel-input .flag-container {
+    visibility: hidden;
+}
+
+.intl-tel-input input, .intl-tel-input input[type="text"], .intl-tel-input input[type="tel"] {
+    padding-right: 0.5rem;
+}
+
+[type="color"], [type="date"], [type="datetime-local"], [type="datetime"], [type="email"], [type="month"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"], [type="time"], [type="url"], [type="week"], textarea {
+    font-family: 'helvetica';
+}
+
+.btn-form, .btn-form:visited, .btn-form:focus {
+    background: #ee2e24;
+    padding: 20px 33px;
+    margin: 20px auto 5px;
+    color: #ffffff;
+    width: 100%;
+    border: none;
+    line-height: 1rem;
+}
+
+.mac .btn-form, .mac .btn-form:visited, .mac .btn-form:focus {
+    padding: 20px 33px 10px;
+}
+
+.btn-form:hover {
+    color: #ffffff;
+    background: #504036;
+}
+
+.form .alerts {
+    display: none;
+}
+
+.repeat {
+    background: url('../img/bg-repeat-bottom.gif') repeat;
+    padding: 30px;
+}
+
+.repeat .title {
+    background: #ffffff;
+    padding: 15px 45px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.repeat .logo-social-big {
+    margin-left: 20px;
+}
+
+.btn-brown, .btn-brown:visited, .btn-brown:focus, .btn-brown:hover {
+    background: #504036;
+    padding: 20px 33px;
+    margin: 30px auto 0;
+    color: #ffffff;
+    display: inline-block;
+    border: none;
+    cursor: default;
+    line-height: 1rem;
+}
+
+.mac .btn-brown, .mac .btn-brown:visited, .mac .btn-brown:focus {
+    padding: 20px 33px 10px;
+}
+
+footer {
+    background: #222222;
+    padding: 25px;
+}
+
+footer .copyright a, footer .copyright a:visited, footer .copyright a:focus {
+    color: #ffffff;
+}
+
+footer .copyright a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+footer .social {
+    margin-left: 10px;
+}
+
+footer .social-icons {
+    margin-top: 20px;
+}
+
+/************************************************************************************************************/
+@media all and (max-width: 1150px) {
+    .logo-journee {
+        right: 10%;
+    }
+
+    .font-38 {
+        font-size: 2.075rem;
+    }
+
+    .btn-red, .btn-red:visited, .btn-red:focus {
+        margin: 25px auto;
+    }
+
+    .form {
+        margin-top: 20px;
+    }
+
+    .form-title {
+        margin: 20px auto;
+    }
+}
+
+@media all and (max-width: 960px) {
+    .logo-journee {
+        right: 10%;
+        width: 180px;
+    }
+}
+
+@media all and (max-width: 800px) {
+    .logo {
+        width: 200px;
+    }
+
+    .font-27 {
+        font-size: 1.388rem;
+    }
+
+    .font-38 {
+        font-size: 1.775rem;
+    }
+}
+
+@media all and (max-width: 700px) {
+    .logo-journee {
+        display: none;
+    }
+
+    .font-18 {
+        font-size: 1em;
+    }
+
+    .center {
+
+    }
+
+    .form .arrow {
+        display: none;
+    }
+}
+
+@media all and (max-width: 640px) {
+    .logo-footer {
+        text-align: center;
+    }
+
+    .copyright  {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    footer .social {
+        margin-top: 0;
+    }
+
+    .social-icons {
+        margin-top: 20px;
+        text-align: center;
+    }
+}
+
+@media all and (max-width: 570px) {
+    .font-18 {
+        font-size: 0.9rem;
+    }
+
+    .font-27 {
+        font-size: 1.3rem;
+    }
+
+    .btn-brown, .btn-brown:visited, .btn-brown:focus, .btn-brown:hover {
+        padding: 10px 15px;
+    }
+}
+
+@media all and (max-width: 390px) {
+    .font-18 {
+        font-size: 0.8rem;
+    }
+
+    .font-27 {
+        font-size: 1.2rem;
+    }
+}
