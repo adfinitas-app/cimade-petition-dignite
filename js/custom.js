@@ -68,7 +68,7 @@ function sendForm() {
         return false;
     }
 
-    var phone = null;
+    var phone = "";
     if ($.trim($("#phone").val())) {
       if ($("#phone").intlTelInput("isValidNumber")) {
 	var phone = $("#phone").intlTelInput("getNumber");
