@@ -1,5 +1,54 @@
 $(document).foundation();
 
+/*
+ * Debut de la lib
+*/
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0; i<ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1);
+    if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+  }
+  return "";
+}
+function createCORSRequest(method, url) {
+  var xhr = new XMLHttpRequest();
+  if ("withCredentials" in xhr) {
+    // XHR for Chrome/Firefox/Opera/Safari.
+    xhr.open(method, url, true);
+  } else if (typeof XDomainRequest != "undefined") {
+    // XDomainRequest for IE.
+    xhr = new XDomainRequest();
+    xhr.open(method, url);
+  } else {
+    // CORS not supported.
+    xhr = null;
+  }
+  return xhr;
+}
+function makeCorsRequest(data, success, error) {
+  var url = 'https://form-to-db.herokuapp.com/';
+  var body = JSON.stringify(data);
+  var xhr = createCORSRequest('POST', url);
+  if (!xhr) {
+    alert('CORS not supported');
+    return;
+  }
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  // Response handlers.
+  xhr.onload = success;
+  // Error Handler
+  xhr.onerror = error;
+  xhr.send(body);
+}
+
+/*
+ * Fin de la lib
+*/
+
 // Validation et envoi du formulaire
 function sendForm() {
     $('.alerts').css('display', 'none').html('');
@@ -30,26 +79,47 @@ function sendForm() {
         }
     }
 
-    $.ajax({
-        type: 'POST',
-        url : '', // AJOUTER L'URL DU SCRIPT
-        data: {
-            firstname : firstname,
-            lastname : lastname,
-            email : email,
-            phone : phone
-        },
-        success : function(result) {
-            $('.form-destroy').remove();
-            $('.form-title').after($('<div />').addClass('helvetica font-18 text-center').html('<b>MERCI D’AVOIR SIGNÉ NOTRE PÉTITION !<br class="hide-for-medium" /> MERCI DE PARTAGER.<b><br />Un grand merci pour votre soutien aux réfugiés.<br /><b>Plus nous serons nombreux, plus nous aurons de force.</b>'));
-            $('.center').height('448px').css('padding', '80px 0').css('backgroundImage', 'url("../img/bg-center2.jpg")');
-            $('.center .vertical-center').removeClass('vertical-center');
-            $('html, body').animate({scrollTop: $('.center').offset().top});
-        },
-        failure: function() {
-            $('.alerts').css('display', 'block').html('Une erreur est survenue');
-        }
-    })
+    function pureField(string) {
+      return (string.replace(/'/g, "%27").replace(/"/g, "&quot;"));
+    }
+
+    var today = new Date();
+    data = {
+      schema : "cimade_petition_dignite",
+      db : {
+	"firstname" : pureField(firstname),
+	"lastname" : pureField(lastname),
+	"email" : pureField(email),
+	"phone" : pureField(phone),
+	"code_campagne": "JMR16",
+	"signin_date": today.toString()
+      },
+      "woopra" : {
+	"host": "lacimade.org",
+	"cookie": getCookie("wooTracker"),
+	"cv_firstname": pureField(firstname),
+	"cv_lastname": pureField(lastname),
+	"cv_name": pureField(firstname) + ' ' + pureField(lastname),
+	"cv_email": pureField(email),
+	"cv_phone": pureField(phone),
+	"event": "JMR16",
+	"ce_code_campagne": "JMR16",
+	"ce_signin_date": today.toString()
+      }
+    };
+    function success() {
+      $('.form-destroy').remove();
+      $('.form-title').after($('<div />').addClass('helvetica font-18 text-center').html('<b>MERCI D’AVOIR SIGNÉ NOTRE PÉTITION !<br class="hide-for-medium" /> MERCI DE PARTAGER.<b><br />Un grand merci pour votre soutien aux réfugiés.<br /><b>Plus nous serons nombreux, plus nous aurons de force.</b>'));
+      $('.center').height('448px').css('padding', '80px 0').css('backgroundImage', 'url("../img/bg-center2.jpg")');
+      $('.center .vertical-center').removeClass('vertical-center');
+      $('html, body').animate({scrollTop: $('.center').offset().top});
+    }
+
+    function error() {
+      $('.alerts').css('display', 'block').html('Une erreur est survenue');
+    }
+
+    makeCorsRequest(data, success, error);
 }
 
 $(function(){
