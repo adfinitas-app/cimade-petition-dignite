@@ -162,7 +162,7 @@ $(function(){
     // Gestion du numéro de téléphone
     $("#phone").intlTelInput({
         utilsScript: '/js/utils.js',
-        onlyCountries: ['fr'],
+        initialCountry: ['fr'],
         allowDropdown: false
     });
 });
