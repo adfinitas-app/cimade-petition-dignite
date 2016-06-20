@@ -69,12 +69,14 @@ function sendForm() {
     }
 
     var phone = null;
-    if ($("#phone").intlTelInput("isValidNumber")) {
-        var phone = $("#phone").intlTelInput("getNumber");
-    }
-    else {
-        $('.alerts').css('display', 'block').html('Vous devez saisir un numéro de téléphone Français');
-        return false;
+    if ($.trim($("#phone").val())) {
+      if ($("#phone").intlTelInput("isValidNumber")) {
+	var phone = $("#phone").intlTelInput("getNumber");
+      }
+      else {
+	$('.alerts').css('display', 'block').html('Vous devez saisir un numéro de téléphone Français');
+	return false;
+      }
     }
 
     function pureField(string) {
