@@ -161,7 +161,7 @@ $(function(){
 
     // Gestion du numéro de téléphone
     $("#phone").intlTelInput({
-        utilsScript: 'js/utils.js',
+        utilsScript: '/js/utils.js',
         onlyCountries: ['fr'],
         allowDropdown: false
     });
