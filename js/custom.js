@@ -162,9 +162,10 @@ $(function(){
     });
 
     // Gestion du numéro de téléphone
-    $("#phone").intlTelInput({
-        utilsScript: '/js/utils.js',
-        initialCountry: ['fr'],
-        allowDropdown: false
+    $("#phone").ready(function() {
+      $("#phone").intlTelInput({
+	utilsScript: '/js/utils.js',
+	initialCountry: ['fr']
+      });
     });
 });

@@ -179,7 +179,7 @@
 }
 
 .form .intl-tel-input .flag-container {
-    visibility: hidden;
+    /*visibility: hidden;*/
 }
 
 .intl-tel-input input, .intl-tel-input input[type="text"], .intl-tel-input input[type="tel"] {
