@@ -108,6 +108,22 @@ function sendForm() {
       }
     };
     function success() {
+        /* tag remontée 1000mercis */
+        window._troq = window._troq || [];
+        _troq.push(['tagid', '6559240-393784f20019f367cff60ec62e172d2a'],
+               ['_rtgpg', 'completedform'],
+               ['_rtgconversion', '1'],
+               ['_rtgidform', 'nom_petition'],
+        );
+        (function() {
+            if (window._troqck !== 1) {
+                var a = document.createElement("script"); a.type = "text/javascript";
+                a.async = !0;
+                a.src = "//mmtro.com/tro.js";
+                var b = document.getElementsByTagName("script")[0];
+                b.parentNode.insertBefore(a, b);
+            }
+       })();
       $('.form-destroy').remove();
       $('.form-title').after($('<div />').addClass('helvetica font-18 text-center').html('<b>MERCI D’AVOIR SIGNÉ NOTRE PÉTITION !<br class="hide-for-medium" /> MERCI DE PARTAGER.<b><br />Un grand merci pour votre soutien aux réfugiés.<br /><b>Plus nous serons nombreux, plus nous aurons de force.</b>'));
       $('.center').height('448px').css('padding', '80px 0').css('backgroundImage', 'url("../img/bg-center2.jpg")');
