@@ -113,7 +113,7 @@ function sendForm() {
         _troq.push(['tagid', '6559240-393784f20019f367cff60ec62e172d2a'],
                ['_rtgpg', 'completedform'],
                ['_rtgconversion', '1'],
-               ['_rtgidform', 'nom_petition']
+               ['_rtgidform', 'cimade_digniterefugies2016']
         );
         (function() {
             if (window._troqck !== 1) {
